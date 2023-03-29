@@ -34,31 +34,54 @@ const Login = () => {
         <div className="max-w-[450px] h-[600px] mx-auto bg-black/75 text-white">
           <div className="max-w-[320px] mx-auto py-16">
             <h1 className="text-3xl">로그인</h1>
-            <form onSubmit={handleSubmit} className="w-full flex flex-col py-4">
-              <input
-                onChange={(e) => setEmail(e.target.value)}
-                className=" rounded p-3 my-2 bg-gray-800 border border-gray-800 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-gray-700 focus:border-gray-700 focus:bg-gray-700 focus:z-10 sm:text-sm"
-                type="email"
-                placeholder="이메일 주소"
-                autoComplete="email"
-              />
 
-              <input
-                onChange={(e) => setPassword(e.target.value)}
-                className="rounded p-3 my-2 bg-gray-800 border border-gray-800 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-gray-700 focus:border-gray-700 focus:bg-gray-700 focus:z-10 sm:text-sm"
-                type="password"
-                placeholder="비밀번호"
-                autoComplete="current-password"
-              />
+            {/* <div class="relative">
+    <input type="text" id="floating_filled" class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+    <label for="floating_filled" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Floating filled</label>
+</div> */}
+            <form onSubmit={handleSubmit} className="w-full flex flex-col py-4">
+              <div className="relative">
+                <input
+                  onChange={(e) => setEmail(e.target.value)}
+                  className=" block rounded px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-600 peer p-3 my-3"
+                  type="email"
+                  placeholder=" "
+                  autoComplete="email"
+                />
+                <label
+                  for="floating_filled"
+                  class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-gray-600 peer-focus:dark:text-gray-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 my-3"
+                >
+                  이메일 주소
+                </label>
+              </div>
+              <div className="relative">
+                <input
+                  onChange={(e) => setPassword(e.target.value)}
+                  className=" block rounded px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-600 peer p-3 my-3"
+                  type="password"
+                  placeholder=" "
+                  autoComplete="current-password"
+                />
+                <label
+                  for="floating_filled"
+                  class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-gray-600 peer-focus:dark:text-gray-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 my-3"
+                >
+                  비밀번호
+                </label>
+              </div>
               {error ? (
                 <p className="text-sm text-orange-600">
                   이메일 주소 혹은 비밀번호를 확인하세요.
                 </p>
               ) : null}
               <button className="bg-red-600 py-3 my-6 rounded">로그인</button>
-              <div className="flex justify-between items-center text-sm text-gray-600">
+              <div className="flex justify-between items-center text-sm text-gray-600 ">
                 <p>
-                  <input className="mr-2" type="checkbox" />
+                  <input
+                    className="mr-2 w-4 h-4 text-gray-600"
+                    type="checkbox"
+                  />
                   로그인 정보 저장
                 </p>
                 <p>도움이 필요하신가요?</p>
