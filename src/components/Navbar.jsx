@@ -26,7 +26,7 @@ const Navbar = () => {
       {user?.email ? (
         <div>
           <Link to="/account">
-            <button className="text-white pr-4">내정보</button>
+            <button className="text-white pr-4">계정</button>
           </Link>
 
           <button
