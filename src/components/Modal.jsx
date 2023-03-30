@@ -65,7 +65,7 @@ const Modal = ({ movie = {} }) => {
       {isOpen ? (
         <>
           <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none ">
-            <div className="rounded relative w-auto my-6 mx-auto max-w-[1000px]">
+            <div className="rounded relative w-auto my-6 mx-auto max-w-[95vw]">
               <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-[1000px] min-w-[40%] sm:max-w-[40%] md:max-w-[60%] lg:max-w-[80%] xl:max-w-[100%] h-full bg-black outline-none focus:outline-none">
                 <div className="relative">
                   <div className="absolute rounded-xl  w-full h-[550px] bg-gradient-to-t from-black"></div>
@@ -76,7 +76,7 @@ const Modal = ({ movie = {} }) => {
                         id="modal-video-iframe"
                         title={`${movie.title}`}
                         className="embed-responsive-item rounded-xl object-cover w-full h-[550px]"
-                        src={`https://www.youtube.com/embed/${videoKey}?autoplay=1&mute=1`}
+                        src={`https://www.youtube.com/embed/${videoKey}?autoplay=1&playsinline=1&mute=1`}
                         allowFullScreen
                         allow="autoplay"
                         muted
