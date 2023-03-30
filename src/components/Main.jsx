@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import requests from "../Requests";
 import axios from "axios";
-import { FaPlay, FaInfoCircle } from "react-icons/fa";
+import { FaPlay } from "react-icons/fa";
 import Modal from "./Modal";
 
 const Main = () => {
@@ -44,7 +44,10 @@ const Main = () => {
                 {"재생"}
               </button>
 
-              <Modal className="border rounded flex text-white bg-gray-700 border-gray-700 py-2 px-5 ml-4" />
+              <Modal
+                movie={movie}
+                className="border rounded flex text-white bg-gray-700 border-gray-700 py-2 px-5 ml-4"
+              />
             </div>
             <p className="text-gray-400 text-sm">
               Released: {movie?.release_date}
