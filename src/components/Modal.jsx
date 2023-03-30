@@ -52,58 +52,75 @@ const Modal = ({ movie = {} }) => {
     }
   };
   return (
-    <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full sm:max-w-[40%] md:max-w-[60%] lg:max-w-[80%] xl:max-w-[100%] h-full bg-black outline-none focus:outline-none">
-      <div className="relative">
-        <div className="absolute rounded-xl w-full h-[550px] bg-gradient-to-t from-black"></div>
-        {/* <img
-      className="rounded-xl object-cover w-full h-[550px]"
-      src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
-      alt={movie.title}
-    /> */}
-        <div className="rounded-xl object-cover w-full h-[550px]">
-          {videoKey ? (
-            <iframe
-              id="modal-video-iframe"
-              title={`${movie.title}`}
-              className="embed-responsive-item rounded-xl object-cover w-full h-[550px]"
-              src={`https://www.youtube.com/embed/${videoKey}?autoplay=1&mute=1`}
-              allowFullScreen
-              allow="autoplay"
-              muted
-            ></iframe>
-          ) : (
-            <div>No video available</div>
-          )}
-        </div>
-        <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-end p-6">
-          <p className="text-3xl md:text-xl font-bold text-white">
-            {movie.title}
-          </p>
-          <div className="my-4 flex">
-            <button className="border rounded flex bg-gray-400 text-black border-gray-400 py-2 px-5">
-              <p>
-                <FaPlay className="mx-1.5 my-1 left-10" />
-              </p>
-              {"재생"}
-            </button>
+    <>
+      <button
+        onClick={openModal}
+        className="hover:bg-red-700 border rounded flex text-white bg-gray-700 border-gray-700 py-2 px-5 ml-4"
+      >
+        <p>
+          <FaInfoCircle className="mx-1.5 my-1 left-10" />
+        </p>
+        {"상세 정보"}
+      </button>
+      {isOpen ? (
+        <>
+          <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none ">
+            <div className="rounded relative w-auto my-6 mx-auto max-w-[1000px]">
+              <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-[1000px] min-w-[40%] sm:max-w-[40%] md:max-w-[60%] lg:max-w-[80%] xl:max-w-[100%] h-full bg-black outline-none focus:outline-none">
+                <div className="relative">
+                  <div className="absolute rounded-xl  w-full h-[550px] bg-gradient-to-t from-black"></div>
+
+                  <div className="rounded-xl object-cover w-full h-[550px]">
+                    {videoKey ? (
+                      <iframe
+                        id="modal-video-iframe"
+                        title={`${movie.title}`}
+                        className="embed-responsive-item rounded-xl object-cover w-full h-[550px]"
+                        src={`https://www.youtube.com/embed/${videoKey}?autoplay=1&mute=1`}
+                        allowFullScreen
+                        allow="autoplay"
+                        muted
+                      ></iframe>
+                    ) : (
+                      <div>No video available</div>
+                    )}
+                  </div>
+                  <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-end p-6">
+                    <p className="text-3xl md:text-xl font-bold text-white">
+                      {movie.title}
+                    </p>
+
+                    <div className="my-4 flex">
+                      <button className="border rounded flex bg-gray-400 text-black border-gray-400 py-2 px-5">
+                        <p>
+                          <FaPlay className="mx-1.5 my-1 left-10" />
+                        </p>
+                        {"재생"}
+                      </button>
+                    </div>
+                    <p className="text-gray-400 text-sm p-1">
+                      공개예정: {movie.release_date}
+                    </p>
+                    <p className="w-full md:max-w-[60%] lg:max-w-[70%] xl:max-w-[80%] text-gray-200 text-sm">
+                      {truncateString(movie.overview, 200)}
+                    </p>
+                  </div>
+                  <button
+                    className="absolute top-0 right-5 p-1 bg-transparent border-0 text-white text-3xl leading-none font-semibold outline-none focus:outline-none z-50"
+                    onClick={closeModal}
+                  >
+                    <span className="bg-transparent text-white h-6 w-6 text-2xl block outline-none focus:outline-none">
+                      ×
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
           </div>
-          <p className="text-gray-400 text-sm p-1">
-            공개예정: {movie.release_date}
-          </p>
-          <p className="w-full md:max-w-[70%] lg:max-w-[80%] xl:max-w-[90%] text-gray-200 text-sm">
-            {truncateString(movie.overview, 150)}
-          </p>
-        </div>
-        <button
-          className="absolute top-0 right-5 p-1 bg-transparent border-0 text-white text-3xl leading-none font-semibold outline-none focus:outline-none z-50"
-          onClick={closeModal}
-        >
-          <span className="bg-transparent text-white h-6 w-6 text-2xl block outline-none focus:outline-none">
-            ×
-          </span>
-        </button>
-      </div>
-    </div>
+        </>
+      ) : null}
+    </>
   );
 };
 
