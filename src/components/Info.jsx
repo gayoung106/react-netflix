@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import requests from "../Requests";
 import axios from "axios";
+import ReactPlayer from "react-player";
 
 const Info = ({ movie = {} }) => {
   const [videoKey, setVideoKey] = useState("");
@@ -34,16 +35,14 @@ const Info = ({ movie = {} }) => {
     <>
       <div className="rounded-xl object-cover w-full h-[550px]">
         {videoKey ? (
-          <iframe
-            id="modal-video-iframe"
-            title={`${movie.title}`}
-            className="embed-responsive-item rounded-xl object-cover w-full h-[550px]"
-            src={`https://www.youtube.com/embed/${videoKey}?autoplay=1&playsinline=1&mute=1`}
-            allowFullScreen
-            allow="autoplay; encrypted-media"
-            playsInline
+          <ReactPlayer
+            url={`https://www.youtube.com/watch?v=${videoKey}`}
+            width="100%"
+            height="550px"
+            playing
             muted
-          ></iframe>
+            controls
+          />
         ) : (
           <div>No video available</div>
         )}
