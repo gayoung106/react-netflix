@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { UserAuth } from "../context/AuthContext";
 import Link from "./Link";
-// import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const links = [
   { path: "/", text: "홈" },
@@ -14,6 +14,7 @@ const links = [
 ];
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
   // const [scroll, setScroll] = useState(false);
 
   const { user, logOut } = UserAuth();
@@ -57,13 +58,13 @@ const Navbar = () => {
                 NETFLIX
               </h1>
             </Link>
-            <div className="ml-6 flex items-center ">
+            {/* <div className="ml-6 flex items-center ">
               {links.map((link) => (
                 <Link key={link.path} to={link.path}>
                   {link.text}
                 </Link>
               ))}
-            </div>
+            </div> */}
           </div>
 
           {user?.email ? (
