@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Navbar from "../components/Navbar";
+
 import { UserAuth } from "../context/AuthContext";
 
 const Login = () => {
@@ -25,7 +25,6 @@ const Login = () => {
 
   return (
     <>
-      <Navbar />
       <div className="w-full h-screen">
         <img
           className="hiden sm:block absolute w-full h-full object-cover"
