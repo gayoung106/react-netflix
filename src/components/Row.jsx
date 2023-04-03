@@ -8,9 +8,14 @@ const Row = ({ title, fetchURL, rowID }) => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    axios.get(fetchURL).then((response) => {
-      setMovies(response.data.results);
-    });
+    axios
+      .get(fetchURL)
+      .then((response) => {
+        setMovies(response.data.results);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, [fetchURL]);
 
   const sliderLeft = () => {
@@ -25,8 +30,10 @@ const Row = ({ title, fetchURL, rowID }) => {
 
   return (
     <>
-      <h2 className="text-white font-bold md:text-xl p-4">{title}</h2>
-      <div className="relative flex items-center group">
+      <h2 className="text-white font-bold md:text-xl p-4 relative z-[1]">
+        {title}
+      </h2>
+      <div className="relative flex items-center group ">
         <BsChevronCompactLeft
           onClick={sliderLeft}
           className="text-white opacity-80 absolute left-0 cursor-pointer z-10 lg:hover:scale-125 hidden group-hover:block "
@@ -34,11 +41,9 @@ const Row = ({ title, fetchURL, rowID }) => {
         />
         <div
           id={"slider" + rowID}
-          className="w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide"
+          className=" w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide"
         >
-          {movies.map((item, id) => (
-            <Movie key={id} item={item} />
-          ))}
+          {movies && movies.map((item, id) => <Movie key={id} item={item} />)}
         </div>
         <BsChevronCompactRight
           onClick={sliderRight}

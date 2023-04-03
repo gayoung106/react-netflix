@@ -13,8 +13,8 @@ const links = [
   { path: "/series", text: "시리즈" },
   { path: "/movie", text: "영화" },
   { path: "/trend", text: "NEW! 요즘 대세 컨텐츠" },
-  { path: "/account", text: "내가 찜한 컨텐츠" },
-  { path: "/language", text: "언어별로 찾아보기" },
+  { path: "/pick", text: "내가 찜한 컨텐츠" },
+  { path: "/recommadation", text: "언어별로 찾아보기" },
 ];
 
 const menuItems = [

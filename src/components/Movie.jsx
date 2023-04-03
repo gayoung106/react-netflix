@@ -29,7 +29,7 @@ const Movie = ({ item }) => {
   };
 
   return (
-    <div className="w-40 sm:w-40 md:w-52 lg:w-60 inline-block cursor-pointer relative p-1">
+    <div className="w-40 sm:w-40 md:w-52 lg:w-60 inline-block cursor-pointer relative p-1  ">
       <img
         className="w-full h-auto block"
         src={`https://image.tmdb.org/t/p/w500/${item?.backdrop_path}`}
@@ -46,11 +46,11 @@ const Movie = ({ item }) => {
             <FaRegHeart className="absolute top-4 left-4 text-gray-300" />
           )}
         </p>
-        {/* <img
-          className="w-full h-auto block absolute top-0 left-0 object-fit-cover hover:scale-150 transition-transform duration-300"
+        <img
+          className="z-[9999] w-full h-auto block absolute top-0 left-0 object-fit-cover hover:scale-150 transition-transform duration-300"
           src={`https://image.tmdb.org/t/p/w500/${item?.backdrop_path}`}
           alt={item?.title}
-        /> */}
+        />
       </div>
     </div>
   );

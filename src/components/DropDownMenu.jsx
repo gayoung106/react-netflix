@@ -4,7 +4,7 @@ function DropdownMenu({ items, onLogout, isOpen, toggleDropdown }) {
   return (
     <>
       {isOpen && (
-        <ul className="absolute bg-black/90 text-white rounded mt-1 w-[200px] mr-[100px]">
+        <ul className="absolute bg-black/90 text-white rounded mt-1 w-[200px] ">
           {items.map((item) => (
             <li
               key={item}

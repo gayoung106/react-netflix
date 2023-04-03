@@ -10,7 +10,7 @@ const SearchBar = () => {
 
   return (
     <div className="relative">
-      <form className="flex" onSubmit={(e) => e.preventDefault()}>
+      <form className="flex mr-2" onSubmit={(e) => e.preventDefault()}>
         {visible && (
           <div className="relative">
             <input
