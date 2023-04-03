@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import Navbar from "./components/Navbar";
+import Nav from "./components/Navbar";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { AuthContextProvider } from "./context/AuthContext";
 
@@ -13,6 +13,7 @@ import Series from "./pages/Series";
 import Signup from "./pages/Signup";
 import Trend from "./pages/Trend";
 import Pick from "./pages/Pick";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
