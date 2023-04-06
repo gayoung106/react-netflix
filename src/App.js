@@ -22,11 +22,6 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/series" element={<Series />} />
-          <Route path="/movie" element={<Movie />} />
-          <Route path="/trend" element={<Trend />} />
-          <Route path="/favorite" element={<Favorite />} />
-          <Route path="/recommadation" element={<Recommendation />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route
