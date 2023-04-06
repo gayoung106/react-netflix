@@ -46,11 +46,6 @@ const Movie = ({ item }) => {
             <FaRegHeart className="absolute top-4 left-4 text-gray-300" />
           )}
         </p>
-        <img
-          className="z-[9999] w-full h-auto block absolute top-0 left-0 object-fit-cover hover:scale-150 transition-transform duration-300"
-          src={`https://image.tmdb.org/t/p/w500/${item?.backdrop_path}`}
-          alt={item?.title}
-        />
       </div>
     </div>
   );
